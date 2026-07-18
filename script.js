@@ -14,19 +14,16 @@ const new_game_offer = document.createElement("button");
 new_game_offer.textContent = "Play Again?";
 
 const winner = document.createElement("p");
-winner.style.fontWeight = "bold";
-winner.style.color = "#3B3430";
-winner.style.fontSize = "20px";
+winner.className = "winner";
 
-    const results = document.querySelector(".container.results");
+const results = document.querySelector(".container.results");
 const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     if (rounds >= 6) return;
 
     const rounds_counter = document.createElement("span");
-    rounds_counter.style.fontWeight = "bold";
-    rounds_counter.style.color = "#766760";
+
     rounds_counter.textContent = `Round ${rounds}: `;
 
     const round_content = document.createElement("p");
@@ -62,8 +59,8 @@ buttons.forEach((button) => {
     }
     rounds++;
     results.appendChild(round_content);
-
-    if (rounds == 6) {
+    // best of five
+    if (rounds == 6 || human_score >= 3 || comp_score >= 3) {
       if (human_score > comp_score) {
         winner.textContent = "You won :) Congrats!";
         results.appendChild(winner);
@@ -76,7 +73,7 @@ buttons.forEach((button) => {
       }
     }
     winner.parentElement.after(new_game_offer);
-
+    // reinicia o jogo
     new_game_offer.addEventListener("click", () => {
       results.replaceChildren();
       rounds = 1;

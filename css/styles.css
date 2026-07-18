@@ -4,7 +4,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-display: swap;
   font-family: "Barlow Semi Condensed", Arial, Helvetica, sans-serif;
 }
 
@@ -14,44 +13,94 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #f2f0ef;
+  background-color: var(--offwhite);
   gap: 40px;
+  padding: 0 24px;
 }
+
+:root{
+    --offwhite: #f2f0ef;
+    --dark-brown: #3b3430;
+    --medium-brown: #584d48;
+    --lighter-brown: #766760;
+
+    --text-font-size-sm: 14px;
+    --text-font-size-lg: 18px;
+
+    --primary-title-font-size-sm: 24px;
+    --primary-title-font-size-lg: 32px;
+    
+    --secondary-title-font-size-sm: 16px;
+    --secondary-title-font-size-lg: 24px;
+}
+
 h1 {
-  color: #3b3430;
+  color: var(--dark-brown);
+  font-size: var(--primary-title-font-size-sm);
 }
 h2 {
-  color: #584d48;
+  font-size: var(--secondary-title-font-size-sm);
+  color: var(--medium-brown);
 }
 .container {
   display: flex;
-  flex-direction: row;
-  gap: 26px;
+  flex-direction: row;  
+  align-items: center;
+  gap: 6px;
 }
 .titles {
   flex-direction: column;
-  align-items: center;
 }
 .results {
   flex-direction: column;
-  gap: 12px;
-  align-items: center;
+  gap: 12px; 
 }
 button {
-  padding: 16px 30px;
-  background-color: #766760;
+  padding: 12px 26px;
+  background-color: var(--lighter-brown);
   color: #dad4d2;
   border: none;
   border-radius: 50px;
-  font-size: 18px;
+  font-size: var(--text-font-size-sm);
   font-weight: bold;
   transition: ease-in 0.1s;
 }
 button:hover {
-  background-color: #3b3430;
-  color: #f2f0ef;
+  background-color: var(--dark-brown);
+  color: var(--offwhite);
 }
 p {
-  color: #3b3430;
-  font-size: 18px;
+  color: var(--dark-brown);
+  font-size: var(--text-font-size-sm);
+  text-align: center;
+}
+p span {
+  font-weight: bold;
+  color: var(--lighter-brown);
+}
+.winner {
+  font-size: var(--secondary-title-font-size-sm);
+  font-weight: bold;
+  color: var(--dark-brown);
+}
+@media screen and (min-width: 768px) {
+  .container {
+    gap: 22px;
+  }
+  h1 {
+    font-size: var(--primary-title-font-size-lg);
+  }
+  h2 {
+    font-size: var(--secondary-title-font-size-lg);
+  }
+  p {
+    font-size: var(--text-font-size-lg);
+  }
+  button {
+    padding: 16px 30px;
+    font-size: var(--text-font-size-lg);
+  }
+  .winner {
+    font-size: var(--secondary-title-font-size-lg);
+  }
 }
