@@ -56,7 +56,7 @@ buttons.forEach((button) => {
     } else {
       round_content.append(
         rounds_counter,
-        `Computer chose ${comp_choice}. ${comp_choice} beats ${human_choice}! You lost this round!`,
+        `Computer chose ${comp_choice}, ${comp_choice} beats ${human_choice}! You lost this round!`,
       );
       comp_score++;
     }
