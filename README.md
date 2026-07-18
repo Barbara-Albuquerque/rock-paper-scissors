@@ -1,13 +1,15 @@
 # Rock Paper Scissors
 
-Este projeto é uma implementação simples do jogo "Pedra, Papel e Tesoura" usando JavaScript, conforme proposto na atividade do [The Odin Project - Foundations](https://www.theodinproject.com/).
+Este projeto é uma implementação simples do jogo "Pedra, Papel e Tesoura" contra o computador, proposta nos exercícios de JavaScript do curso [Foundations, The Odin Project](https://www.theodinproject.com/).
 
-O código JavaScript contém toda a lógica do jogo, permitindo que o usuário jogue contra o computador diretamente no console do navegador. O objetivo é praticar conceitos básicos de programação, como estruturas condicionais, funções e manipulação de entradas.
+O exercício inicial propunha uma interação com o usuário por meio de `prompt` e `alert`, mas o projeto foi incrementado para uma interface gráfica simples, onde tudo acontece diretamente na página. O usuário escolhe uma opção pelos botões de Pedra, Papel ou Tesoura, o computador faz a própria jogada e a interface exibe a resposta com o resultado da rodada.
 
 ## Aprendizados
 
+- Interação com o usuário via `prompt` e `alert`
 - Estruturas de decisão (`if`, `else`, `switch`)
 - Funções em JavaScript
-- Interação com o usuário via `prompt`, `alert` e `console.log`
+- Manipulação do DOM
+- Eventos de clique em botões
 
 ---
