@@ -20,11 +20,12 @@ const results = document.querySelector(".container.results");
 const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    if (rounds >= 6) return;
+    if (rounds >= 6 || comp_score >= 3 || human_score >= 3) return;
 
     const rounds_counter = document.createElement("span");
-
     rounds_counter.textContent = `Round ${rounds}: `;
+
+    const score_counter = document.createElement("span");
 
     const round_content = document.createElement("p");
 
@@ -33,30 +34,36 @@ buttons.forEach((button) => {
     comp_choice = getComputerChoice();
 
     if (human_choice == "rock" && comp_choice == "scissors") {
+      human_score++;
       round_content.append(
         rounds_counter,
-        "Computer chose scissors, rock beats scissors! You won this round!",
+        `Computer chose scissors, rock beats scissors! You won this round! `,
+        score_counter,
       );
-      human_score++;
     } else if (human_choice == "paper" && comp_choice == "rock") {
+      human_score++;
       round_content.append(
         rounds_counter,
-        "Computer chose rock, paper beats rock! You won this round!",
+        "Computer chose rock, paper beats rock! You won this round! ",
+        score_counter,
       );
-      human_score++;
     } else if (human_choice == "scissors" && comp_choice == "paper") {
-      round_content.append(
-        rounds_counter,
-        "Computer chose paper, scissors beats paper! You won this round!",
-      );
       human_score++;
-    } else {
       round_content.append(
         rounds_counter,
-        `Computer chose ${comp_choice}, ${comp_choice} beats ${human_choice}! You lost this round!`,
+        "Computer chose paper, scissors beats paper! You won this round! ",
+        score_counter,
       );
+    } else {
       comp_score++;
+      round_content.append(
+        rounds_counter,
+        `Computer chose ${comp_choice}, ${comp_choice} beats ${human_choice}! You lost this round! `,
+        score_counter,
+      );
     }
+ 
+    score_counter.textContent = `Current score: ${human_score}. Computer score: ${comp_score}`;
     rounds++;
     results.appendChild(round_content);
     // best of five
