@@ -35,19 +35,19 @@ buttons.forEach((button) => {
     if (human_choice == "rock" && comp_choice == "scissors") {
       round_content.append(
         rounds_counter,
-        "Computer chose scissors! rock beats scissors! You won this round!",
+        "Computer chose scissors, rock beats scissors! You won this round!",
       );
       human_score++;
     } else if (human_choice == "paper" && comp_choice == "rock") {
       round_content.append(
         rounds_counter,
-        "Computer chose rock. paper beats rock! You won this round!",
+        "Computer chose rock, paper beats rock! You won this round!",
       );
       human_score++;
     } else if (human_choice == "scissors" && comp_choice == "paper") {
       round_content.append(
         rounds_counter,
-        "Computer chose paper. scissors beats paper! You won this round!",
+        "Computer chose paper, scissors beats paper! You won this round!",
       );
       human_score++;
     } else {
